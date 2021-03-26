@@ -1,6 +1,8 @@
 import socket
 import tqdm
 import os
+import csv
+
 
 SERVER_HOST = "0.0.0.0"
 SERVER_PORT = 5001
@@ -34,3 +36,19 @@ for i in range(n):
 client_socket.close()
 
 s.close()
+
+dish_quan = [0, 0, 0, 0, 0]
+no = 0
+food = []
+with open('appetite_data.txt', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+        if row != []:
+            food = row[7:]
+            for i in range(5):
+                dish_quan[i] += int(row[i+2])
+            no+=1
+
+for j in range(5):
+    print("The mean appetite for "+food[j]+" is "+str(dish_quan[j]/no))
+
