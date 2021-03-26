@@ -84,6 +84,7 @@ tk.Label(main, text='                                     ', font=500).grid(row=
 tk.Label(main, text='Have a great day!!!', font=500).grid(row=14, column=35)
 tk.Label(main, text='                                     ', font=500).grid(row=15, column=40)
 tk.Label(main, text='                                     ', font=500).grid(row=16, column=40)
+tkm.showinfo("welcome <3","Good " + greet + "! Here's " + inf + "'s menu\n")
 data = []
 def getvalues():
     global name,rollno,value1,value2,value3,value4,value5,flag
