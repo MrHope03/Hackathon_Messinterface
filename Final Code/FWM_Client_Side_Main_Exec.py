@@ -97,7 +97,7 @@ def getvalues():
     with open('appetite_data.txt', 'w') as f:
         writer = csv.writer(f)
         writer.writerow([name, roll, value1, value2, value3, value4, value5])
-    os.system('python client_side.py')
+    os.system('python FWM_Client_Side_Support.py')
 button3 = tk.Button(main, text='SUBMIT', width=25, command=getvalues)
 button3.grid(row=17, column=35)
 
