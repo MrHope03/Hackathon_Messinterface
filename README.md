@@ -7,5 +7,5 @@ The Interface for student contains
 - - Lunch
 - - Snack
 - - Dinner
-- User can use the calorie meter to measure their intake levels
+- Main dishes, side dishes and a special dish would be presented in the interface
 - Finally submission need to be done!!
