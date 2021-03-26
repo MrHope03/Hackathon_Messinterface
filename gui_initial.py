@@ -66,8 +66,6 @@ button3.grid(row=7, column=25)
 menubar = tk.Menu(main)  
 menu = tk.Menu(menubar, tearoff = 0) 
 menubar.add_cascade(label ='MENU', menu = menu) 
-'''quizmenu.add_command(label ='TEACHERS INTERFACE', command = push) 
-quizmenu.add_command(label ='STUDENT INTERFACE', command = student)  '''
 menu.add_separator() 
 menu.add_command(label ='Exit', command = main.destroy)
 main.config(menu = menubar) 
