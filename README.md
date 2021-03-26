@@ -1,7 +1,7 @@
 #To let readers learn about the project
 
 The Interface for student contains
-- Greetings => wrt time of the day
+- Greetings
 - General Menu for the day @particular time
 - - Breakfast
 - - Lunch
