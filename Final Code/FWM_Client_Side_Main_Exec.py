@@ -29,8 +29,8 @@ elif (time>=18 and time <21):
     fday = day
 else:
     greet = "Night"
-    inf = "Tomorrow"
-    fday = (x + datetime.timedelta(days=1)).strftime("%A")
+    inf = "Morning"
+    fday = (x + datetime.timedelta(days=1)).strftime("%a")
     
 #retriving data from csv file
 f = open(fday + '_' + inf + '.txt','r')
@@ -95,7 +95,7 @@ def getvalues():
     value3 = scale3.get()
     value4 = scale4.get()
     value5 = scale5.get()
-    flag = name or rollno
+    flag = name or roll
     if(not(flag)):
         tkm.showinfo('ERROR 404','ROLL NO and NAME cant be NULL')
     else:
