@@ -1,9 +1,11 @@
 #file transfer code taken from https://www.thepythoncode.com/article/send-receive-files-using-sockets-python
 
+# modules for file transfer
 import socket
 import tqdm
 import os
 
+# modules for curr_time
 import datetime
 import calendar
 
