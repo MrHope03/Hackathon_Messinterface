@@ -5,9 +5,9 @@ import tqdm
 import os
 
 SEPARATOR = "<SEPARATOR>"
-BUFFER_SIZE = 4096 
+BUFFER_SIZE = 4096
 
-host = "192.168.1.101"
+host = "122.174.32.56"
 
 port = 5001
 
