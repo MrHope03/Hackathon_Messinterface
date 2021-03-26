@@ -1,36 +1,42 @@
 import tkinter as tk #pip install tk
 import time
+import datetime
+import calendar
 import tkinter.messagebox as tkm 
 from PIL import ImageTk , Image #pip install pillow
 import csv
 
 
 #WRITING IN A CSV FILE
-f = open('dinner.csv','w')
-writer = csv.writer(f)
-writer.writerow(["day","main_dish","side_dish1","side_dish2","side_dish3","spl_dish"])
-writer.writerow(["monday","kal dosai","sambar","chutney","pickle","badam milk"])
-writer.writerow(["tuesday","chappati","mushroom gravy","dhall","pickle","lemon juice"])
-writer.writerow(["wednesday","chicken biriyani","chicken kuruma","chicken 65","onion raitha","icecream"])
-writer.writerow(["thursday","kal dosai","sambar","chutney","pickle","badam milk"])
-writer.writerow(["friday","chappati","mushroom gravy","dhall","pickle","lemon juice"])
-writer.writerow(["saturday","chicken biriyani","chicken kuruma","chicken 65","onion raitha","icecream"])
-writer.writerow(["sunday","chicken biriyani","chicken kuruma","chicken 65","onion raitha","icecream"])
-f.close()
-
-#retriving data from csv file
-f = open('dinner.csv','r')
-reader = csv.DictReader(f,delimiter = ',')
 local_time = time.localtime(1545925769)
 day = local_time.tm_wday
 now = time.strftime('%H:%M:%S %p')
-d = dict()
-i=0
+x = datetime.datetime.now()
+day = x.strftime("%a")
+time = int(x.strftime("%H"))
+
+if (time>6 and time <12):
+    greet = "Morning"
+    inf = "Afternoon"
+    fday = day
+elif (time>=12 and time<18):
+    greet = "Afternoon"
+    inf = "Night"
+    fday = day
+elif (time>=18 and time <21):
+    greet = "Evening"
+    inf = "Night"
+    fday = day
+else:
+    greet = "Night"
+    inf = "Tomorrow"
+    fday = (x + datetime.timedelta(days=1)).strftime("%A")
+#retriving data from csv file
+f = open(fday + '_' + inf + '.txt','r')
+reader = csv.DictReader(f,delimiter = ',')
 for row in reader:
+    print(row)
     d = dict(row)
-    if (i==day):
-        break
-    i+=1
 
 #graphical user interface
     
