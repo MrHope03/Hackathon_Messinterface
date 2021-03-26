@@ -52,7 +52,6 @@ fields = ['Food', 'Category', 'Appetite']
 data = []
 
 foo = sorted(food, key = lambda x: x[1])
-print(foo)
 
 for i in foo:
     if i[1]=='1':
