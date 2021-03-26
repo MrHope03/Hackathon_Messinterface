@@ -7,8 +7,7 @@ import tkinter.messagebox as tkm
 from PIL import ImageTk , Image #pip install pillow
 import csv
 
-
-#WRITING IN A CSV FILE
+#fetching current date and time
 local_time = time.localtime(1545925769)
 day = local_time.tm_wday
 now = time.strftime('%H:%M:%S %p')
@@ -32,6 +31,7 @@ else:
     greet = "Night"
     inf = "Tomorrow"
     fday = (x + datetime.timedelta(days=1)).strftime("%A")
+    
 #retriving data from csv file
 f = open(fday + '_' + inf + '.txt','r')
 reader = csv.DictReader(f,delimiter = ',')
@@ -59,7 +59,7 @@ tk.Label(main, text='Roll No: ', font=500).grid(row=3, column=40)
 text2=tk.Entry(main, width=20)
 text2.grid(row=3,column=41)
 tk.Label(main, text='Todays menu: ', font=1500).grid(row=4, column=30)
-tk.Label(main, text='Appetite: ', font=1500).grid(row=4, column=40)
+tk.Label(main, text='Apetite: ', font=1500).grid(row=4, column=40)
 tk.Label(main, text='Main Dish: ', font=500).grid(row=5, column=30)
 tk.Label(main, text='{}'.format(d['main_dish']), font=500).grid(row=5, column=31)
 scale1 = tk.Scale(main,orient = 'horizontal',from_=0,to=5)
@@ -86,7 +86,7 @@ tk.Label(main, text='                                     ', font=500).grid(row=
 tk.Label(main, text='                                     ', font=500).grid(row=16, column=40)
 data = []
 def getvalues():
-    global name,rollno,value1,value2,value3,value4,value5
+    global name,rollno,value1,value2,value3,value4,value5,flag
     name = text1.get()
     roll = text2.get()
     value1 = scale1.get()
@@ -94,10 +94,16 @@ def getvalues():
     value3 = scale3.get()
     value4 = scale4.get()
     value5 = scale5.get()
-    with open('appetite_data.txt', 'w') as f:
-        writer = csv.writer(f)
-        writer.writerow([name, roll, value1, value2, value3, value4, value5])
-    os.system('python FWM_Client_Side_Support.py')
+    flag = name or rollno
+    if(not(flag)):
+        tkm.showinfo('ERROR 404','ROLL NO and NAME cant be NULL')
+    else:
+        with open('appetite_data.txt', 'w') as f:
+            writer = csv.writer(f)
+            writer.writerow([name, roll, value1, value2, value3, value4, value5])
+        os.system('python FWM_Client_Side_Support.py')
+        tkm.showinfo(':-)','Have A Great Day!!!')
+        main.destroy()
 button3 = tk.Button(main, text='SUBMIT', width=25, command=getvalues)
 button3.grid(row=17, column=35)
 
