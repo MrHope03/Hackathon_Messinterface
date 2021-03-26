@@ -50,5 +50,5 @@ with open('appetite_data.txt', 'r') as csv_file:
             no+=1
 
 for j in range(5):
-    print("The mean appetite for "+food[j]+" is "+str(dish_quan[j]/no))
+    print("\nThe mean appetite for "+food[j]+" is "+str(dish_quan[j]/no))
 
