@@ -100,7 +100,7 @@ def getvalues():
     else:
         with open('appetite_data.txt', 'w') as f:
             writer = csv.writer(f)
-            writer.writerow([name, roll, value1, value2, value3, value4, value5])
+            writer.writerow([name, roll, value1, value2, value3, value4, value5,d['main_dish'],d['side_dish1'],d['side_dish2'],d['side_dish3'],d['spl_dish']])
         os.system('python FWM_Client_Side_Support.py')
         tkm.showinfo(':-)','Have A Great Day!!!')
         main.destroy()
