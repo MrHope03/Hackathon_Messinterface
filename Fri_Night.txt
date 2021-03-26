@@ -1,0 +1,10 @@
+Food, Category
+Rice,1
+Rasam,4
+Buttermilk,2
+Pappad,3
+Pickle,4
+Kolambu,4
+Potato Fry,1
+Pulka,3
+Channa Masala,1
