@@ -53,6 +53,7 @@ data = []
 
 foo = sorted(food, key = lambda x: x[1])
 
+
 for i in foo:
     if i[1]=='1':
         print("How much quanity of " + i[0] + " do you feel you can eat? (on a scale of 0 to 5)\n")
@@ -67,7 +68,7 @@ for i in foo:
         print("Do you feel like having " + i[0] + " along with the main dish?")
         data += [[i[0], i[1], input()]]
         
-filen = "appetite_data.txt"
+filename = "appetite_data.txt"
 
 with open(filen, 'w') as csvfile:
     csvwriter = csv.writer(csvfile)
@@ -80,8 +81,6 @@ BUFFER_SIZE = 4096
 host = "192.168.1.101"
 
 port = 5001
-
-filename = "student1.txt"
 
 filesize = os.path.getsize(filename)
 
