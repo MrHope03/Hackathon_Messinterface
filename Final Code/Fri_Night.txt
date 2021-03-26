@@ -1,0 +1,2 @@
+day,main_dish,side_dish1,side_dish2,side_dish3,spl_dish
+Friday,Chappati,Mushroom Gravy,Dhall,Pickle,Lemon Juice
