@@ -7,7 +7,7 @@ import os
 SEPARATOR = "<SEPARATOR>"
 BUFFER_SIZE = 4096
 
-host = "122.174.32.56"
+host = "192.168.1.101"
 
 port = 5001
 
